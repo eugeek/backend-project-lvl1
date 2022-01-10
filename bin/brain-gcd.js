@@ -22,10 +22,6 @@ function task(a, b){
     }
 }
 
-function bad(){
-
-}
-
 function findDiv(){
     console.log('Find the greatest common divisor of given numbers.');
 
