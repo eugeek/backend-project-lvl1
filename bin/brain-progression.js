@@ -11,7 +11,7 @@ function createProgression() {
   const arr = [];
   arr.push(getRandomInt(1, 35));
   const d = getRandomInt(1, 10);
-  for (let i = 1; i < size; i++) {
+  for (let i = 1; i < size; i += 1) {
     arr[i] = arr[i - 1] + d;
   }
 
@@ -24,13 +24,13 @@ function round() {
   const key = pr[iKey];
   pr[iKey] = '..';
   console.log(`Question: ${pr.join(' ')}`);
-  const ans_user = readlineSync.question('Your answer: ');
-  if (Number(key) === Number(ans_user)) {
+  const ansUser = readlineSync.question('Your answer: ');
+  if (Number(key) === Number(ansUser)) {
     console.log('Correct!');
     return true;
   }
   console.log(
-    `'${ans_user}' is wrong answer ;(. Correct answer was '${Number(key)}'.`,
+    `'${ansUser}' is wrong answer ;(. Correct answer was '${Number(key)}'.`,
   );
   return false;
 }
@@ -43,7 +43,7 @@ function progression() {
       console.log(`Let's try again, ${name}!`);
       return;
     }
-    i++;
+    i += 1;
   }
 
   console.log(`Congratulations, ${name}!`);

@@ -7,14 +7,11 @@ parserOptions:
   ecmaVersion: 13
   sourceType: module
 rules:
+  import/no-mutable-exports: off
+  no-eval: off
   no-console: 0
   import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
     - error
     - ignorePackages
     - js: always
   no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
-  "camelcase": ["error", {"allow": ["ans_user"]}]
-  no-plusplus: off
-  no-eval: off
-  import/no-mutable-exports: off
-  consistent-return: off

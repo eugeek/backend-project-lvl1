@@ -8,13 +8,13 @@ function taskSolve(num1, num2, z) {
   str = `${String(num1)} ${z} ${String(num2)}`;
 
   console.log(`Question: ${str}`);
-  const ans_user = readlineSync.question('Your answer: ');
-  if (Number(eval(str)) === Number(ans_user)) {
+  const ansUser = readlineSync.question('Your answer: ');
+  if (Number(eval(str)) === Number(ansUser)) {
     console.log('Correct!');
     return true;
   }
   console.log(
-    `'${ans_user}' is wrong answer ;(. Correct answer was '${eval(str)}'.`,
+    `'${ansUser}' is wrong answer ;(. Correct answer was '${eval(str)}'.`,
   );
   console.log(`Let's try again, ${name}!`);
   return false;

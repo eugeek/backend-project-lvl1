@@ -8,28 +8,28 @@ function getRandomInt(min, max) {
 
 function isNumberPrime(n) {
   let countDivs = 0;
-  for (let d = 2; d < n; d++) {
-    if (n % d === 0) countDivs++;
+  for (let d = 2; d < n; d += 1) {
+    if (n % d === 0) countDivs += 1;
     if (countDivs >= 1) return false;
   }
 
-  if (countDivs === 0) return true;
+  return true;
 }
 
 function round() {
   const number = getRandomInt(1, 100);
   console.log(`Question: ${number}`);
-  const ans_user = readlineSync.question('Your answer: ');
+  const ansUser = readlineSync.question('Your answer: ');
   if (
-    (isNumberPrime(number) && ans_user === 'yes')
-    || (!isNumberPrime(number) && ans_user === 'no')
+    (isNumberPrime(number) && ansUser === 'yes')
+    || (!isNumberPrime(number) && ansUser === 'no')
   ) {
     console.log('Correct!');
     return true;
   }
   console.log(
-    `'${ans_user}' is wrong answer ;(. Correct answer was '${
-      ans_user === 'yes' ? 'no' : 'yes'
+    `'${ansUser}' is wrong answer ;(. Correct answer was '${
+      ansUser === 'yes' ? 'no' : 'yes'
     }'.`,
   );
   return false;
@@ -43,7 +43,7 @@ function prime() {
       console.log(`Let's try again, ${name}!`);
       return;
     }
-    i++;
+    i += 1;
   }
 
   console.log(`Congratulations, ${name}!`);

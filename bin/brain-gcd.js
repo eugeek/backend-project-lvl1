@@ -3,21 +3,23 @@ import readlineSync from 'readline-sync';
 import { greeting, name } from './src/cli.js';
 
 function greatDiv(a, b) {
-  for (let d = a; d >= 1; d--) {
+  for (let d = a; d >= 1; d -= 1) {
     if (a % d === 0 && b % d === 0) return d;
   }
+
+  return '';
 }
 
 function task(a, b) {
   const div = greatDiv(a, b);
   console.log(`Question: ${a} ${b}`);
-  const ans_user = readlineSync.question('Your answer: ');
-  if (Number(div) === Number(ans_user)) {
+  const ansUser = readlineSync.question('Your answer: ');
+  if (Number(div) === Number(ansUser)) {
     console.log('Correct!');
     return true;
   }
   console.log(
-    `'${ans_user}' is wrong answer ;(. Correct answer was '${div}'.`,
+    `'${ansUser}' is wrong answer ;(. Correct answer was '${div}'.`,
   );
   return false;
 }
