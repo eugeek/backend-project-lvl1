@@ -11,7 +11,7 @@ brain-gcd:
 brain-progression:
 	node bin/brain-progression.js
 brain-prime:
-	node bin/brain-prime.js
+	node bin/brain-primenpx eslint --no-eslintrc --config .eslintrc.yml ..js
 publish:
 	npm publish --dry-run
 make lint:
