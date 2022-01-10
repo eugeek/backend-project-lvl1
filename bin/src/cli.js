@@ -7,4 +7,4 @@ function greeting() {
   console.log(`Hello, ${name}!`);
 }
 
-export { greeting, name };
+export default greeting;

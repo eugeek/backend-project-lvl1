@@ -1,20 +1,40 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { greeting, name } from './src/cli.js';
 
-function taskSolve(num1, num2, z) {
-  let str = '';
-  str = `${String(num1)} ${z} ${String(num2)}`;
+let name = '';
+function greeting() {
+  console.log('Welcome to the Brain Games!');
+  name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+}
 
-  console.log(`Question: ${str}`);
+function taskSolve(num1, num2, oper) {
+  let result;
+  switch (oper) {
+    case '+':
+      result = Number(num1) + Number(num2);
+      console.log(`Question: ${num1} + ${num2}`);
+      break;
+    case '-':
+      result = Number(num1) - Number(num2);
+      console.log(`Question: ${num1} - ${num2}`);
+      break;
+    case '*':
+      result = Number(num1) * Number(num2);
+      console.log(`Question: ${num1} * ${num2}`);
+      break;
+    default:
+      break;
+  }
+
   const ansUser = readlineSync.question('Your answer: ');
-  if (Number(eval(str)) === Number(ansUser)) {
+  if (result === Number(ansUser)) {
     console.log('Correct!');
     return true;
   }
   console.log(
-    `'${ansUser}' is wrong answer ;(. Correct answer was '${eval(str)}'.`,
+    `'${ansUser}' is wrong answer ;(. Correct answer was '${result}'.`,
   );
   console.log(`Let's try again, ${name}!`);
   return false;

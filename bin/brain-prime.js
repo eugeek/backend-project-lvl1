@@ -1,6 +1,12 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { greeting, name } from './src/cli.js';
+
+let name = '';
+function greeting() {
+  console.log('Welcome to the Brain Games!');
+  name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+}
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
