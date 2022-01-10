@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { greeting, name } from "./src/cli.js";
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
+import { greeting, name } from './src/cli.js';
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
@@ -17,23 +17,22 @@ function isNumberPrime(n) {
 }
 
 function round() {
-  let number = getRandomInt(1, 100);
+  const number = getRandomInt(1, 100);
   console.log(`Question: ${number}`);
-  const ans_user = readlineSync.question("Your answer: ");
+  const ans_user = readlineSync.question('Your answer: ');
   if (
-    (isNumberPrime(number) && ans_user === "yes") ||
-    (!isNumberPrime(number) && ans_user === "no")
+    (isNumberPrime(number) && ans_user === 'yes')
+    || (!isNumberPrime(number) && ans_user === 'no')
   ) {
-    console.log("Correct!");
+    console.log('Correct!');
     return true;
-  } else {
-    console.log(
-      `'${ans_user}' is wrong answer ;(. Correct answer was '${
-        ans_user === "yes" ? "no" : "yes"
-      }'.`
-    );
-    return false;
   }
+  console.log(
+    `'${ans_user}' is wrong answer ;(. Correct answer was '${
+      ans_user === 'yes' ? 'no' : 'yes'
+    }'.`,
+  );
+  return false;
 }
 
 function prime() {

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { greeting, name } from "./src/cli.js";
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
+import { greeting, name } from './src/cli.js';
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
@@ -20,24 +20,23 @@ function createProgression() {
 
 function round() {
   const pr = createProgression();
-  let iKey = getRandomInt(0, pr.length - 1);
-  let key = pr[iKey];
-  pr[iKey] = "..";
-  console.log(`Question: ${pr.join(" ")}`);
-  const ans_user = readlineSync.question("Your answer: ");
+  const iKey = getRandomInt(0, pr.length - 1);
+  const key = pr[iKey];
+  pr[iKey] = '..';
+  console.log(`Question: ${pr.join(' ')}`);
+  const ans_user = readlineSync.question('Your answer: ');
   if (Number(key) === Number(ans_user)) {
-    console.log("Correct!");
+    console.log('Correct!');
     return true;
-  } else {
-    console.log(
-      `'${ans_user}' is wrong answer ;(. Correct answer was '${Number(key)}'.`
-    );
-    return false;
   }
+  console.log(
+    `'${ans_user}' is wrong answer ;(. Correct answer was '${Number(key)}'.`,
+  );
+  return false;
 }
 
 function progression() {
-  console.log("What number is missing in the progression?");
+  console.log('What number is missing in the progression?');
   let i = 0;
   while (i < 3) {
     if (!round()) {

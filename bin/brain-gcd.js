@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { greeting, name } from "./src/cli.js";
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
+import { greeting, name } from './src/cli.js';
 
 function greatDiv(a, b) {
   for (let d = a; d >= 1; d--) {
@@ -9,22 +9,21 @@ function greatDiv(a, b) {
 }
 
 function task(a, b) {
-  let div = greatDiv(a, b);
+  const div = greatDiv(a, b);
   console.log(`Question: ${a} ${b}`);
-  const ans_user = readlineSync.question("Your answer: ");
+  const ans_user = readlineSync.question('Your answer: ');
   if (Number(div) === Number(ans_user)) {
-    console.log("Correct!");
+    console.log('Correct!');
     return true;
-  } else {
-    console.log(
-      `'${ans_user}' is wrong answer ;(. Correct answer was '${div}'.`
-    );
-    return false;
   }
+  console.log(
+    `'${ans_user}' is wrong answer ;(. Correct answer was '${div}'.`,
+  );
+  return false;
 }
 
 function findDiv() {
-  console.log("Find the greatest common divisor of given numbers.");
+  console.log('Find the greatest common divisor of given numbers.');
 
   if (!task(2, 20)) {
     console.log(`Let's try again, ${name}!`);

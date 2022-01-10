@@ -26,10 +26,13 @@
   },
   "homepage": "https://github.com/eugeek/backend-project-lvl1#readme",
   "dependencies": {
+    "prettier": "^2.5.1",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
     "eslint": "^8.6.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
-    "prettier": "^2.5.1",
-    "readline-sync": "^1.4.10"
+    "eslint-plugin-jest": "^25.3.4"
   }
 }
