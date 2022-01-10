@@ -3,10 +3,6 @@
 import {greeting, name} from './src/cli.js';
 import readlineSync from 'readline-sync';
 
-function RandomINT() {
-    return Math.floor(Math.random() * (30 - 1) + 1);
-}
-
 function taskSolve(num1, num2, z){
     let str = '';
     str = String(num1) + ' ' + z + ' ' + String(num2);
